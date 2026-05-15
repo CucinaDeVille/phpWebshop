@@ -19,29 +19,31 @@ session_start();
         <a class="navbar-brand" href="index.php">
             Mein Webshop
         </a>
+        <div>
+            <!-- differentiate between logged in and logged out -->
+            <?php if (isset($_SESSION['user_id'])): ?>
 
-        // differentiate between logged in and logged out
-        <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="cart.php" class="btn btn-success">
+                    Shopping cart
+                </a>
 
-            <a href="cart.php" class="btn btn-success">
-                Warenkorb
-            </a>
+                <a href="logout.php" class="btn btn-danger">
+                    Logout
+                </a>
 
-            <a href="logout.php" class="btn btn-danger">
-                Logout
-            </a>
+            <?php else: ?>
 
-        <?php else: ?>
+                <a href="login.php" class="btn btn-outline-light">
+                    Login
+                </a>
 
-            <a href="login.php" class="btn btn-outline-light">
-                Login
-            </a>
+                <a href="register.php" class="btn btn-warning">
+                    Register
+                </a>
 
-            <a href="register.php" class="btn btn-warning">
-                Register
-            </a>
+            <?php endif; ?>
+        </div>
 
-        <?php endif; ?>
     </div>
 </nav>
 
