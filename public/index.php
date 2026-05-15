@@ -20,9 +20,6 @@ session_start();
             Mein Webshop
         </a>
         <div>
-            <!-- differentiate between logged in and logged out -->
-            <?php if (isset($_SESSION['user_id'])): ?>
-
                 <a href="cart.php" class="btn btn-success">
                     Shopping cart
                 </a>
@@ -31,7 +28,6 @@ session_start();
                     Logout
                 </a>
 
-            <?php else: ?>
 
                 <a href="login.php" class="btn btn-outline-light">
                     Login
@@ -40,8 +36,6 @@ session_start();
                 <a href="register.php" class="btn btn-warning">
                     Register
                 </a>
-
-            <?php endif; ?>
         </div>
 
     </div>
@@ -54,6 +48,11 @@ session_start();
     <p>
         Here you can find and buy products!
     </p>
+
+    <a href="actions/add_to_cart.php?id=1&name=Testprodukt&price=9.99"
+       class="btn btn-success">
+        Add to cart
+    </a>
 
     <form action="search.php" method="GET" class="mt-4">
 
