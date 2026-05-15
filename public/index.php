@@ -20,38 +20,56 @@ session_start();
             Mein Webshop
         </a>
 
-        <div>
+        // differentiate between logged in and logged out
+        <?php if (isset($_SESSION['user_id'])): ?>
+
+            <a href="cart.php" class="btn btn-success">
+                Warenkorb
+            </a>
+
+            <a href="logout.php" class="btn btn-danger">
+                Logout
+            </a>
+
+        <?php else: ?>
+
             <a href="login.php" class="btn btn-outline-light">
                 Login
             </a>
 
             <a href="register.php" class="btn btn-warning">
-                Registrieren
+                Register
             </a>
-        </div>
+
+        <?php endif; ?>
     </div>
 </nav>
 
 <div class="container mt-5">
 
-    <h1>Willkommen im Webshop</h1>
+    <h1>Welcome to my webshop</h1>
 
     <p>
-        Hier können Produkte durchsucht und gekauft werden.
+        Here you can find and buy products!
     </p>
 
     <form action="search.php" method="GET" class="mt-4">
 
         <div class="input-group">
 
+            <label for="find" class="visually-hidden">
+                Suche
+            </label>
+
             <input
                 type="text"
+                id="find"
                 name="search"
                 class="form-control"
-                placeholder="Produkte suchen...">
+                placeholder="Browse products...">
 
-            <button class="btn btn-primary">
-                Suchen
+            <button type="submit" class="btn btn-primary">
+                Find
             </button>
 
         </div>
