@@ -67,5 +67,5 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 
 -- Accessories
 ('AirPods Pro', 'Noise cancelling earbuds', 'airpodspro.jpg', 279.00, 19),
-('Apple Watch Series 9', 'Smartwatch with health tracking', 'watch9.jpg', 499.00, 20);
+('Apple Watch Series 9', 'Smartwatch with health tracking', 'watch9.jpg', 499.00, 20),
 ('Apple MagSafe Duo', 'Charge iPhone and Apple Watch at the same time', 'magsafeduo.jpg', 89.00, 21);
