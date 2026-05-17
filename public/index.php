@@ -6,18 +6,6 @@ require_once(__DIR__ . "/../includes/db.php");
 $stmt = $pdo->query("SELECT * FROM categories");
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo "<h2>Categories</h2>";
-echo "<pre>";
-print_r($categories);
-echo "</pre>";
-
-$stmt = $pdo->query("SELECT * FROM products");
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-echo "<h2>Products</h2>";
-echo "<pre>";
-print_r($products);
-echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +27,10 @@ echo "</pre>";
             Mein Webshop
         </a>
         <div>
+                <a href="categories.php" class="btn btn-primary">
+                    Categories
+                </a>
+
                 <a href="cart.php" class="btn btn-success">
                     Shopping cart
                 </a>
@@ -46,7 +38,6 @@ echo "</pre>";
                 <a href="logout.php" class="btn btn-danger">
                     Logout
                 </a>
-
 
                 <a href="login.php" class="btn btn-outline-light">
                     Login
@@ -61,16 +52,6 @@ echo "</pre>";
 </nav>
 
 <div class="container mt-5">
-
-    <h2>Categories</h2>
-
-    <ul>
-        <?php foreach ($categories as $category): ?>
-            <li>
-                <?= htmlspecialchars($category['name']) ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
 
     <h1>Welcome to my webshop</h1>
 
