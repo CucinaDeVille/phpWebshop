@@ -4,9 +4,20 @@ session_start();
 require_once(__DIR__ . "/../includes/db.php");
 
 $stmt = $pdo->query("SELECT * FROM categories");
-
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+echo "<h2>Categories</h2>";
+echo "<pre>";
+print_r($categories);
+echo "</pre>";
+
+$stmt = $pdo->query("SELECT * FROM products");
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo "<h2>Products</h2>";
+echo "<pre>";
+print_r($products);
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>
