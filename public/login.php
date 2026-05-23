@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("../includes/db.php");
+require_once(__DIR__ . "/../includes/db.php");
 
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
@@ -15,18 +15,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    /*
-       Dummy-Login until db exists.
-       Replaced later by SQL query.
-    */
+    $stmt = $pdo->prepare(
+        "SELECT * FROM users WHERE username = ?"
+    );
 
-    if ($username === 'test' && $password === '1234') {
+    $stmt->execute([$username]);
 
-        $_SESSION['user_id'] = 1;
-        $_SESSION['username'] = $username;
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
         $_SESSION['last_activity'] = time();
 
+        echo "
+            <script>
+                alert('Login successful');
+                window.location.href='index.php';
+            </script>
+        ";
+
         header("Location: index.php");
+
         exit;
 
     } else {
