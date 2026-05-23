@@ -33,14 +33,21 @@ $stmt = $pdo->prepare("
     VALUES (?, ?, ?, ?, ?, ?)
 ");
 
-$stmt->execute([
-    $username,
-    $hashedPassword,
-    $firstname,
-    $lastname,
-    $address,
-    $email
-]);
+try {
+    $stmt->execute([
+        $username,
+        $hashedPassword,
+        $firstname,
+        $lastname,
+        $address,
+        $email
+    ]);
+} catch (PDOException $e) {
+    if ($e->getCode() == 23000) {
+        echo "<script>alert('An unexpected error occurred'); window.location.href='/register.php';</script>";
+        exit;
+    }
+}
 
 header("Location: /login.php");
 exit;
