@@ -55,7 +55,7 @@ require_once("../includes/db.php");
                         Set up an account
                     </h2>
 
-                    <form action="../actions/register_action.php" method="POST">
+                    <form action="/actions/register_action.php" method="POST">
 
                         <div class="mb-3">
 
