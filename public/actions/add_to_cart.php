@@ -19,5 +19,5 @@ $_SESSION['cart'][] = [
     "price" => $price
 ];
 
-header("Location: ../cart.php");
+header("Location: /cart.php");
 exit;
