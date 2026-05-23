@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+// user not logged in yet
+if (!isset($_SESSION['user_id'])) {
+
+    // remember user requested /cart.php
+    $_SESSION['redirect_after_login'] = '/cart.php';
+
+    // redirect to login.php
+    header("Location: /login.php");
+    exit;
+}
+
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
