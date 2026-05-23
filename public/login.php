@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-require_once(__DIR__ . "/../includes/db.php");
-
+// if user is already logged in
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit;
