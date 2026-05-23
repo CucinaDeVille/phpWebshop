@@ -20,13 +20,6 @@ if ($user && password_verify($password, $user['password'])) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
 
-    echo "
-    <script>
-        alert('Login successful');
-        window.location.href='/index.php';
-    </script>
-    ";
-
 } else {
 
     echo "
