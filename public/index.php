@@ -1,11 +1,5 @@
 <?php
 session_start();
-
-require_once(__DIR__ . "/../includes/db.php");
-
-$stmt = $pdo->query("SELECT * FROM categories");
-$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
