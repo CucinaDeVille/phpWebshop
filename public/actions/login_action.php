@@ -20,6 +20,16 @@ if ($user && password_verify($password, $user['password'])) {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
 
+    // set redirect variable either to .index or .cart if user requested that initially
+    $redirect = $_SESSION['redirect_after_login'] ?? '/index.php';
+
+    // delete session variable
+    unset($_SESSION['redirect_after_login']);
+
+    // redirect to given variable
+    header("Location: $redirect");
+    exit;
+
 } else {
 
     echo "
