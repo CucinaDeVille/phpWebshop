@@ -53,7 +53,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container mt-5">
 
-    <h1>Welcome to my webshop</h1>
+    <h1>Welcome to my page, <?= htmlspecialchars($_SESSION['username'] ?? 'Guest') ?> </h1>
 
     <p>
         Here you can find and buy products!
