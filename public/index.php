@@ -21,10 +21,11 @@ session_start();
             Mein Webshop
         </a>
         <div>
-                <a href="categories.php" class="btn btn-primary">
-                    Categories
-                </a>
+            <a href="categories.php" class="btn btn-primary">
+                Categories
+            </a>
 
+            <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="cart.php" class="btn btn-success">
                     Shopping cart
                 </a>
@@ -32,7 +33,7 @@ session_start();
                 <a href="logout.php" class="btn btn-danger">
                     Logout
                 </a>
-
+            <?php else: ?>
                 <a href="login.php" class="btn btn-outline-light">
                     Login
                 </a>
@@ -40,6 +41,7 @@ session_start();
                 <a href="register.php" class="btn btn-warning">
                     Register
                 </a>
+            <?php endif; ?>
         </div>
 
     </div>
