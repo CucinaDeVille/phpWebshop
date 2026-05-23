@@ -46,18 +46,12 @@ $error = "";
 </nav>
 
 <div class="container mt-5">
-
     <div class="row justify-content-center">
-
         <div class="col-md-5">
-
             <div class="card shadow">
-
                 <div class="card-body">
 
-                    <h2 class="mb-4">
-                        Login
-                    </h2>
+                    <h2 class="mb-4">Login</h2>
 
                     <?php if (!empty($error)): ?>
 
@@ -67,13 +61,11 @@ $error = "";
 
                     <?php endif; ?>
 
-                    <form method="POST">
+                    <form method="POST" action="actions/login_action.php">
 
+                        <!--form for username-->
                         <div class="mb-3">
-
-                            <label for="username" class="form-label">
-                                User name
-                            </label>
+                            <label for="username" class="form-label">User name</label>
 
                             <input
                                 type="text"
@@ -81,14 +73,11 @@ $error = "";
                                 name="username"
                                 class="form-control"
                                 required>
-
                         </div>
 
+                        <!--form for password-->
                         <div class="mb-3">
-
-                            <label for="password" class="form-label">
-                                Password
-                            </label>
+                            <label for="password" class="form-label">Password</label>
 
                             <input
                                 type="password"
@@ -96,31 +85,22 @@ $error = "";
                                 name="password"
                                 class="form-control"
                                 required>
-
                         </div>
 
-                        <button class="btn btn-primary w-100">
-                            Login
-                        </button>
+                        <button class="btn btn-primary w-100" type="submit">Login</button>
 
                     </form>
 
+                    <!--if not yet registered-->
                     <div class="mt-3 text-center">
-
                         <a href="register.php">
                             Don't have an account yet? Sign up!
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 </body>
