@@ -37,35 +37,35 @@ INSERT INTO categories (name, parent_id) VALUES
 INSERT INTO products (name, description, image, price, category_id) VALUES
 
 -- iPhones
-('iPhone 15', 'Latest Apple smartphone with A16 chip', 'iphone15.jpg', 999.00, 11),
-('iPhone 15 Pro', 'Pro model with titanium design', 'iphone15pro.jpg', 1199.00, 11),
-('iPhone 14', 'Previous generation iPhone', 'iphone14.jpg', 849.00, 11),
+('iPhone 15', 'Latest Apple smartphone with A16 chip', 'assets/images/iphone15.jpg', 999.00, 11),
+('iPhone 15 Pro', 'Pro model with titanium design', 'assets/images/iphone15pro.jpg', 1199.00, 11),
+('iPhone 14', 'Previous generation iPhone', 'assets/images/iphone14.jpg', 849.00, 11),
 
 -- iPads
-('iPad Air', 'Lightweight Apple tablet', 'ipadair.jpg', 699.00, 12),
-('iPad Pro 11"', 'Professional tablet performance', 'ipadpro11.jpg', 1099.00, 12),
+('iPad Air', 'Lightweight Apple tablet', 'assets/images/ipadair.jpeg', 699.00, 12),
+('iPad Pro 11"', 'Professional tablet performance', 'assets/images/ipadpro11.jpg', 1099.00, 12),
 
 -- MacBook
-('MacBook Air M2', 'Ultra portable Apple laptop', 'mba_m2.jpg', 1199.00, 8),
-('MacBook Pro 14"', 'Powerful laptop for professionals', 'mbp14.jpg', 1999.00, 8),
+('MacBook Air M3', 'Ultra portable Apple laptop', 'assets/images/mba_m3.jpeg', 1199.00, 8),
+('MacBook Pro 16"', 'Powerful laptop for professionals', 'assets/images/mbp16.webp', 2599.00, 8),
 
 -- iMac
-('iMac 24"', 'All-in-one desktop computer', 'imac24.jpg', 1499.00, 9),
+('iMac 24"', 'All-in-one desktop computer', 'assets/images/imac24.webp', 1499.00, 9),
 
 -- Mac Mini
-('Mac Mini M2', 'Compact desktop computer', 'macmini.jpg', 799.00, 10),
+('Mac Mini M4', 'Compact desktop computer', 'assets/images/macmini.jpeg', 799.00, 10),
 
 -- Monitors
-('LG UltraFine 4K', 'High quality 4K monitor for Mac', 'lg4k.jpg', 699.00, 13),
-('LG UltraFine 5K', 'High quality 5K monitor for Mac', 'lg5k.jpg', 1099.00, 14),
-('Samsung UltraWide 4K', '32 inch monitor for productive workflows', 'samsunguw.jpg', 899.00, 15),
-('Apple Studio Display', '5K Retina display', 'studiodisplay.jpg', 1599.00, 16),
+('LG UltraFine 4K', 'High quality 4K monitor for Mac', 'assets/images/lg4k.avif', 699.00, 13),
+('LG UltraFine 5K', 'High quality 5K monitor for Mac', 'assets/images/lg5k.avif', 1099.00, 14),
+('DELL UltraWide 4K', '34 inch monitor for productive workflows', 'assets/images/delluw.jpg', 899.00, 15),
+('Apple Studio Display', '5K Retina display', 'assets/images/studiodisplay.jpeg', 1599.00, 16),
 
 -- TVs
-('Samsung 4K Smart TV', 'Ultra HD smart television', 'samsung4k.jpg', 899.00, 17),
-('LG OLED C3 55"', 'OLED TV with perfect blacks', 'oled55.jpg', 1499.00, 18),
+('Samsung 4K Smart TV', 'Ultra HD smart television', 'assets/images/samsung4k.jpg', 899.00, 17),
+('LG OLED C3 55"', 'OLED TV with perfect blacks', 'assets/images/oled55.jpg', 1499.00, 18),
 
 -- Accessories
-('AirPods Pro', 'Noise cancelling earbuds', 'airpodspro.jpg', 279.00, 19),
-('Apple Watch Series 9', 'Smartwatch with health tracking', 'watch9.jpg', 499.00, 20),
-('Apple MagSafe Duo', 'Charge iPhone and Apple Watch at the same time', 'magsafeduo.jpg', 89.00, 21);
+('AirPods Pro', 'Noise cancelling earbuds', 'assets/images/airpodspro.jpg', 279.00, 19),
+('Apple Watch Series 10', 'Smartwatch with health tracking', 'assets/images/watch10.jpg', 499.00, 20),
+('Apple MagSafe Duo', 'Charge iPhone and Apple Watch at the same time', 'assets/images/magsafeduo.jpeg', 89.00, 21);
