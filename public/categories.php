@@ -73,6 +73,10 @@ if ($parentId === null) {
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5><?= htmlspecialchars($product['name']) ?></h5>
+                        <img src="<?= htmlspecialchars($product['image']) ?>"
+                                class="card-img-top"
+                                alt="<?= htmlspecialchars($product['name']) ?>"
+                        >
                         <p><?= htmlspecialchars($product['description']) ?></p>
                         <strong><?= $product['price'] ?> €</strong>
 
