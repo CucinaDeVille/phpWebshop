@@ -68,18 +68,28 @@ if ($parentId === null) {
 
     <div class="row">
 
+        <!-- iterate through all items of category -->
         <?php foreach ($items as $product): ?>
             <div class="col-md-4">
                 <div class="card mb-3">
                     <div class="card-body">
+
+                        <!-- display product name -->
                         <h5><?= htmlspecialchars($product['name']) ?></h5>
+
+                        <!-- display product picture -->
                         <img src="<?= htmlspecialchars($product['image']) ?>"
                                 class="card-img-top"
                                 alt="<?= htmlspecialchars($product['name']) ?>"
                         >
+
+                        <!-- display product description -->
                         <p><?= htmlspecialchars($product['description']) ?></p>
+
+                        <!-- display product price -->
                         <strong><?= $product['price'] ?> €</strong>
 
+                        <!-- button to add to cart -->
                         <a class="btn btn-success mt-2"
                            href="actions/add_to_cart.php?id=<?= $product['id'] ?>&name=<?= urlencode($product['name']) ?>&price=<?= $product['price'] ?>">
                             Add to cart
