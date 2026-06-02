@@ -62,12 +62,13 @@ if ($cart) {
     <h1>Shopping cart</h1>
 
     <?php if (empty($items)): ?>
-
-        <p>The shopping cart is empty.</p>
+        <div class="alert alert-info">
+            The shopping cart is empty.
+        </div>
 
     <?php else: ?>
 
-        <ul class="list-group">
+        <ul class="list-group mb-3">
 
             <?php foreach ($items as $item): ?>
 
