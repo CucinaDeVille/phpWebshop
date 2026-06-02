@@ -79,8 +79,9 @@ if ($parentId === null) {
 
                         <!-- display product picture -->
                         <img src="<?= htmlspecialchars($product['image']) ?>"
-                                class="card-img-top"
-                                alt="<?= htmlspecialchars($product['name']) ?>"
+                             class="img-fluid mb-2"
+                             style="max-height: 150px; object-fit: contain;"
+                             alt="<?= htmlspecialchars($product['name']) ?>"
                         >
 
                         <!-- display product description -->
