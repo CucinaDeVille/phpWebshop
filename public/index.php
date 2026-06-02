@@ -55,7 +55,7 @@ session_start();
         Here you can find and buy products!
     </p>
 
-    <a href="actions/add_to_cart.php?id=1&name=Testprodukt&price=9.99"
+    <a href="actions/add_to_cart.php?id=1"
        class="btn btn-success">
         Add to cart
     </a>

@@ -1,12 +1,30 @@
 <?php
 session_start();
 
-$index = $_GET['index'] ?? null;
+// connect to db
+require_once(__DIR__ . "/../../includes/db.php");
 
-if ($index !== null && isset($_SESSION['cart'][$index])) {
-    unset($_SESSION['cart'][$index]);
-    $_SESSION['cart'] = array_values($_SESSION['cart']);
+// require login if user not logged in yet
+if (!isset($_SESSION['user_id'])) {
+    header("Location: /login.php");
+    exit;
 }
+
+$cartItemId = $_GET['id'] ?? null;
+
+if (!$cartItemId) {
+    header("Location: /cart.php");
+    exit;
+}
+
+// remove item from db
+$stmt = $pdo->prepare("
+    DELETE FROM cart_items
+    WHERE id = ?
+");
+
+// fill prepared statement and execure
+$stmt->execute([$cartItemId]);
 
 header("Location: /cart.php");
 exit;

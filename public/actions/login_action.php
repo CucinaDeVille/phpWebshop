@@ -6,13 +6,14 @@ require_once(__DIR__ . "/../../includes/db.php");
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+// build query string
 $stmt = $pdo->prepare("
     SELECT * FROM users
     WHERE username = ?
 ");
 
+// fill prepared statement and execute
 $stmt->execute([$username]);
-
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($password, $user['password'])) {

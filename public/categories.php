@@ -91,7 +91,7 @@ if ($parentId === null) {
 
                         <!-- button to add to cart -->
                         <a class="btn btn-success mt-2"
-                           href="actions/add_to_cart.php?id=<?= $product['id'] ?>&name=<?= urlencode($product['name']) ?>&price=<?= $product['price'] ?>">
+                           href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
                             Add to cart
                         </a>
                     </div>
