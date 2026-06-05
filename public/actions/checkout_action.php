@@ -105,5 +105,5 @@ $stmt = $pdo->prepare("
 $stmt->execute([$cart['id']]);
 
 // redirect to success page
-header("Location: /paypal_success.php");
+header("Location: /actions/paypal_success.php?order_id=" . $orderId);
 exit;
