@@ -36,6 +36,37 @@ if ($search !== '') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">
+            Mein Webshop
+        </a>
+        <div>
+            <a href="categories.php" class="btn btn-primary">
+                Categories
+            </a>
+
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="cart.php" class="btn btn-success">
+                    Shopping cart
+                </a>
+
+                <a href="logout.php" class="btn btn-danger">
+                    Logout
+                </a>
+            <?php else: ?>
+                <a href="login.php" class="btn btn-outline-light">
+                    Login
+                </a>
+
+                <a href="register.php" class="btn btn-warning">
+                    Register
+                </a>
+            <?php endif; ?>
+        </div>
+
+    </div>
+</nav>
 
     <!-- display search results -->
     <div class="container mt-5">
@@ -62,31 +93,44 @@ if ($search !== '') {
 
             <!-- iterate through products array containing the results -->
             <?php foreach ($products as $product): ?>
-                <div class="card mb-3">
-                    <div class="card-body">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
 
-                        <h5><?= htmlspecialchars($product['name']) ?></h5>
+                                <!-- display product picture -->
+                                <div class="col-md-2 text-center">
+                                    <img src="<?= htmlspecialchars($product['image']) ?>"
+                                         class="img-fluid"
+                                         style="max-height: 150px; object-fit: contain;"
+                                         alt="<?= htmlspecialchars($product['name']) ?>"
+                                    >
+                                </div>
 
-                        <p><?= htmlspecialchars($product['description']) ?></p>
+                                <!-- display name and description -->
+                                <div class="col-md-7">
+                                    <h5><?= htmlspecialchars($product['name']) ?></h5>
+                                    <p class="mb-0">
+                                        <?= htmlspecialchars($product['description']) ?>
+                                    </p>
+                                </div>
 
-                        <strong><?= $product['price'] ?> €</strong>
+                                <div class="col-md-3 text-end">
+                                    <!-- display product price -->
+                                    <h3 class="text-danger mb-3">
+                                        <?= $product['price'] ?> €
+                                    </h3>
 
-                        <!-- display product picture -->
-                        <img src="<?= htmlspecialchars($product['image']) ?>"
-                             class="img-fluid mb-2"
-                             style="max-height: 150px; object-fit: contain;"
-                             alt="<?= htmlspecialchars($product['name']) ?>"
-                        >
-
-                        <br><br>
-
-                        <a class="btn btn-success mt-2"
-                            href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
-                            Add to cart
-                        </a>
+                                    <!-- button to add to cart -->
+                                    <a class="btn btn-success mt-2"
+                                       href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
+                                        Add to cart
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             <?php endforeach; ?>
 
         <?php endif; ?>
