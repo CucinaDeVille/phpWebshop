@@ -57,40 +57,39 @@ if ($cart) {
 </head>
 <body>
 
-<div class="container mt-5">
-
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">
-                Mein Webshop
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">
+            Mein Webshop
+        </a>
+        <div>
+            <a href="categories.php" class="btn btn-primary">
+                Categories
             </a>
-            <div>
-                <a href="categories.php" class="btn btn-primary">
-                    Categories
+
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="cart.php" class="btn btn-success">
+                    Shopping cart
                 </a>
 
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="cart.php" class="btn btn-success">
-                        Shopping cart
-                    </a>
+                <a href="logout.php" class="btn btn-danger">
+                    Logout
+                </a>
+            <?php else: ?>
+                <a href="login.php" class="btn btn-outline-light">
+                    Login
+                </a>
 
-                    <a href="logout.php" class="btn btn-danger">
-                        Logout
-                    </a>
-                <?php else: ?>
-                    <a href="login.php" class="btn btn-outline-light">
-                        Login
-                    </a>
-
-                    <a href="register.php" class="btn btn-warning">
-                        Register
-                    </a>
-                <?php endif; ?>
-            </div>
-
+                <a href="register.php" class="btn btn-warning">
+                    Register
+                </a>
+            <?php endif; ?>
         </div>
-    </nav>
 
+    </div>
+</nav>
+
+<div class="container mt-5">
     <?php if (empty($items)): ?>
         <div class="alert alert-info">
             The shopping cart is empty.
