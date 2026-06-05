@@ -22,23 +22,17 @@ require_once("../includes/db.php");
 <body>
 
 <nav class="navbar navbar-dark bg-dark">
-
     <div class="container-fluid">
-
         <a class="navbar-brand" href="index.php">
             Mein Webshop
         </a>
 
         <div>
-
             <a href="login.php" class="btn btn-outline-light">
                 Login
             </a>
-
         </div>
-
     </div>
-
 </nav>
 
 <div class="container mt-5">

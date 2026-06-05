@@ -26,23 +26,17 @@ $error = "";
 <body>
 
 <nav class="navbar navbar-dark bg-dark">
-
     <div class="container-fluid">
-
         <a class="navbar-brand" href="index.php">
             Mein Webshop
         </a>
 
         <div>
-
             <a href="register.php" class="btn btn-warning">
                 Sign up
             </a>
-
         </div>
-
     </div>
-
 </nav>
 
 <div class="container mt-5">
