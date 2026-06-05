@@ -37,35 +37,35 @@ INSERT INTO categories (name, parent_id) VALUES
 INSERT INTO products (name, description, image, price, category_id) VALUES
 
 -- iPhones
-('iPhone 15', 'Latest Apple smartphone with A16 chip', 'assets/images/iphone15.jpg', 999.00, 11),
-('iPhone 15 Pro', 'Pro model with titanium design', 'assets/images/iphone15pro.jpg', 1199.00, 11),
-('iPhone 14', 'Previous generation iPhone', 'assets/images/iphone14.jpg', 849.00, 11),
+('Apple iPhone XR', 'Apple iPhone from 2018', 'assets/images/iphonexr.jpeg', 699.00, 11),
+('Apple iPhone SE', 'Apple iPhone from 2016', 'assets/images/iphonese.jpeg', 589.00, 11),
+('Apple iPhone 5c', 'Apple iPhone from 2013', 'assets/images/iphone5c.heic', 599.00, 11),
 
 -- iPads
-('iPad Air', 'Lightweight Apple tablet', 'assets/images/ipadair.jpeg', 699.00, 12),
-('iPad Pro 11"', 'Professional tablet performance', 'assets/images/ipadpro11.jpg', 1099.00, 12),
+('Apple iPad mini', 'Small Apple iPad', 'assets/images/ipadmini.heic', 599.00, 12),
+('Apple iPad Pro 11"', 'Pro Apple iPad', 'assets/images/ipadpro.heic', 799.00, 12),
 
 -- MacBook
-('MacBook Air M3', 'Ultra portable Apple laptop', 'assets/images/mba_m3.jpeg', 1199.00, 8),
-('MacBook Pro 16"', 'Powerful laptop for professionals', 'assets/images/mbp16.webp', 2599.00, 8),
+('MacBook Air M1', 'First Mac with Apple Silicon', 'assets/images/mba13.heic', 999.00, 8),
+('MacBook Pro 16"', 'Powerful Apple Mac for professionals', 'assets/images/mbp16.heic', 2499.00, 8),
 
 -- iMac
-('iMac 24"', 'All-in-one desktop computer', 'assets/images/imac24.webp', 1499.00, 9),
+('iMac 24"', 'All-in-one Apple desktop computer', 'assets/images/lg5k.jpeg', 1199.00, 9),
 
 -- Mac Mini
-('Mac Mini M4', 'Compact desktop computer', 'assets/images/macmini.jpeg', 799.00, 10),
+('Mac Mini M4', 'Compact Apple desktop computer', 'assets/images/macmini.heic', 799.00, 10),
 
 -- Monitors
-('LG UltraFine 4K', 'High quality 4K monitor for Mac', 'assets/images/lg4k.avif', 699.00, 13),
-('LG UltraFine 5K', 'High quality 5K monitor for Mac', 'assets/images/lg5k.avif', 1099.00, 14),
-('DELL UltraWide 4K', '34 inch monitor for productive workflows', 'assets/images/delluw.jpg', 899.00, 15),
-('Apple Studio Display', '5K Retina display', 'assets/images/studiodisplay.jpeg', 1599.00, 16),
+('LG UltraFine 4K', 'High quality 4K monitor for Mac', 'assets/images/lg4k.jpeg', 699.00, 13),
+('LG UltraFine 5K', 'High quality 5K monitor for Mac', 'assets/images/lg5k.jpeg', 899.00, 14),
+('DELL UltraWide 4K', '34 inch monitor for productive workflows', 'assets/images/lg5k.jpeg', 899.00, 15),
+('Apple Studio Display', '5K Retina display', 'assets/images/lg5k.jpeg', 1599.00, 16),
 
 -- TVs
-('Samsung 4K Smart TV', 'Ultra HD smart television', 'assets/images/samsung4k.jpg', 899.00, 17),
-('LG OLED C3 55"', 'OLED TV with perfect blacks', 'assets/images/oled55.jpg', 1499.00, 18),
+('Samsung 4K Smart TV', 'Ultra HD smart television', 'assets/images/lgoled.heic', 499.00, 17),
+('LG OLED C3 55"', 'OLED TV with perfect blacks', 'assets/images/lgoled.heic', 899.00, 18),
 
 -- Accessories
-('AirPods Pro', 'Noise cancelling earbuds', 'assets/images/airpodspro.jpg', 279.00, 19),
-('Apple Watch Series 10', 'Smartwatch with health tracking', 'assets/images/watch10.jpg', 499.00, 20),
-('Apple MagSafe Duo', 'Charge iPhone and Apple Watch at the same time', 'assets/images/magsafeduo.jpeg', 89.00, 21);
+('Apple AirPods Pro', 'Noise cancelling AirPods', 'assets/images/airpodspro.heic', 279.00, 19),
+('Apple Watch Series', 'Apple Watch with health tracking', 'assets/images/applewatch.heic', 499.00, 20),
+('Apple iPhone 5c Dock', 'Charge iPhone and play music in an upright position', 'assets/images/iphone5cdock.heic', 39.00, 21);
