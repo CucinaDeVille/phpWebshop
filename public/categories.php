@@ -70,31 +70,41 @@ if ($parentId === null) {
 
         <!-- iterate through all items of category -->
         <?php foreach ($items as $product): ?>
-            <div class="col-md-4">
+            <div class="col-12">
                 <div class="card mb-3">
                     <div class="card-body">
+                        <div class="row align-items-center">
 
-                        <!-- display product name -->
-                        <h5><?= htmlspecialchars($product['name']) ?></h5>
+                            <!-- display product picture -->
+                            <div class="col-md-2 text-center">
+                                <img src="<?= htmlspecialchars($product['image']) ?>"
+                                     class="img-fluid"
+                                     style="max-height: 150px; object-fit: contain;"
+                                     alt="<?= htmlspecialchars($product['name']) ?>"
+                                >
+                            </div>
 
-                        <!-- display product picture -->
-                        <img src="<?= htmlspecialchars($product['image']) ?>"
-                             class="img-fluid mb-2"
-                             style="max-height: 150px; object-fit: contain;"
-                             alt="<?= htmlspecialchars($product['name']) ?>"
-                        >
+                            <!-- display name and description -->
+                            <div class="col-md-7">
+                                <h5><?= htmlspecialchars($product['name']) ?></h5>
+                                <p class="mb-0">
+                                    <?= htmlspecialchars($product['description']) ?>
+                                </p>
+                            </div>
 
-                        <!-- display product description -->
-                        <p><?= htmlspecialchars($product['description']) ?></p>
+                            <div class="col-md-3 text-end">
+                                <!-- display product price -->
+                                <h3 class="text-danger mb-3">
+                                    <?= $product['price'] ?> €
+                                </h3>
 
-                        <!-- display product price -->
-                        <strong><?= $product['price'] ?> €</strong>
-
-                        <!-- button to add to cart -->
-                        <a class="btn btn-success mt-2"
-                           href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
-                            Add to cart
-                        </a>
+                                <!-- button to add to cart -->
+                                <a class="btn btn-success mt-2"
+                                   href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
