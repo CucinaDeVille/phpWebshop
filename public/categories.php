@@ -77,71 +77,79 @@ if ($parentId === null) {
     </div>
 </nav>
 
-<?php if ($mode === "categories"): ?>
+<div class="container mt-5">
 
-    <h2>Categories</h2>
+    <?php if ($mode === "categories"): ?>
 
-    <ul class="list-group">
-        <?php foreach ($items as $item): ?>
-            <li class="list-group-item">
-                <a href="categories.php?parent_id=<?= $item['id'] ?>">
-                    <?= htmlspecialchars($item['name']) ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-
-<?php else: ?>
-
-    <h2>Products</h2>
-
-    <div class="row">
-
-        <!-- iterate through all items of category -->
-        <?php foreach ($items as $product): ?>
-            <div class="col-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-
-                            <!-- display product picture -->
-                            <div class="col-md-2 text-center">
-                                <img src="<?= htmlspecialchars($product['image']) ?>"
-                                     class="img-fluid"
-                                     style="max-height: 150px; object-fit: contain;"
-                                     alt="<?= htmlspecialchars($product['name']) ?>"
-                                >
+        <h2 class="mb-4">Categories</h2>
+        <div class="row g-3">
+            <?php foreach ($items as $item): ?>
+                <div class="col-12">
+                    <a href="categories.php?parent_id=<?= $item['id'] ?>"
+                        class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">
+                                    <?= htmlspecialchars($item['name']) ?>
+                                </h5>
                             </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
 
-                            <!-- display name and description -->
-                            <div class="col-md-7">
-                                <h5><?= htmlspecialchars($product['name']) ?></h5>
-                                <p class="mb-0">
-                                    <?= htmlspecialchars($product['description']) ?>
-                                </p>
-                            </div>
+    <?php else: ?>
 
-                            <div class="col-md-3 text-end">
-                                <!-- display product price -->
-                                <h3 class="text-danger mb-3">
-                                    <?= $product['price'] ?> €
-                                </h3>
+        <h2>Products</h2>
 
-                                <!-- button to add to cart -->
-                                <a class="btn btn-success mt-2"
-                                   href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
-                                    Add to cart
-                                </a>
+        <div class="row">
+
+            <!-- iterate through all items of category -->
+            <?php foreach ($items as $product): ?>
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+
+                                <!-- display product picture -->
+                                <div class="col-md-2 text-center">
+                                    <img src="<?= htmlspecialchars($product['image']) ?>"
+                                         class="img-fluid"
+                                         style="max-height: 150px; object-fit: contain;"
+                                         alt="<?= htmlspecialchars($product['name']) ?>"
+                                    >
+                                </div>
+
+                                <!-- display name and description -->
+                                <div class="col-md-7">
+                                    <h5><?= htmlspecialchars($product['name']) ?></h5>
+                                    <p class="mb-0">
+                                        <?= htmlspecialchars($product['description']) ?>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-3 text-end">
+                                    <!-- display product price -->
+                                    <h3 class="text-danger mb-3">
+                                        <?= $product['price'] ?> €
+                                    </h3>
+
+                                    <!-- button to add to cart -->
+                                    <a class="btn btn-success mt-2"
+                                        href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
+                                        Add to cart
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
-    </div>
-
-<?php endif; ?>
+</div>
 
 </body>
 </html>
