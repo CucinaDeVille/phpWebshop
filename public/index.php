@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+require_once __DIR__ . '/../includes/db.php';
+
+$stmt = $pdo->query("SELECT * FROM products");
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +67,7 @@ session_start();
     <h1>Welcome to my page, <?= htmlspecialchars($_SESSION['username'] ?? 'Guest') ?> </h1>
 
     <p>
-        Here you can find and buy products!
+        Highlights of the week!
     </p>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -110,10 +115,55 @@ session_start();
             <button type="submit" class="btn btn-primary">
                 Find
             </button>
-
         </div>
-
     </form>
+
+    <!-- show all products in store -->
+    <h2 class="mt-5 mb-4">All Products</h2>
+
+    <div class="row">
+
+        <?php foreach ($products as $product): ?>
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <!-- image -->
+                            <div class="col-md-2 text-center">
+                                <img src="<?= htmlspecialchars($product['image']) ?>"
+                                     class="img-fluid"
+                                     style="max-height: 150px; object-fit: contain;"
+                                     alt="<?= htmlspecialchars($product['name']) ?>">
+                            </div>
+
+                            <!-- name + description -->
+                            <div class="col-md-7">
+                                <h5><?= htmlspecialchars($product['name']) ?></h5>
+                                <p class="mb-0">
+                                    <?= htmlspecialchars($product['description']) ?>
+                                </p>
+                            </div>
+
+                            <!-- price + button -->
+                            <div class="col-md-3 text-end">
+                                <h3 class="text-danger mb-3">
+                                    <?= $product['price'] ?> €
+                                </h3>
+
+                                <a class="btn btn-success"
+                                   href="actions/add_to_cart.php?id=<?= $product['id'] ?>">
+                                    Add to cart
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+    </div>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
