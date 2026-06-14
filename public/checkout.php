@@ -4,6 +4,9 @@ session_start();
 // connect to db
 require_once(__DIR__ . "/../includes/db.php");
 
+// paypal connection
+require_once(__DIR__ . "/../includes/paypal_config.php");
+
 // user not logged in yet
 if (!isset($_SESSION['user_id'])) {
     header("Location: /login.php");
@@ -143,10 +146,45 @@ if ($cart) {
         </div>
 
         <!-- connection to check out with PayPal -->
-        <form action="actions/checkout_action.php" method="post">
-            <button type="submit" class="btn btn-success">
-                Proceed to PayPal
+        <form action="<?= PAYPAL_URL ?>" method="post">
+
+            <input type="hidden"
+                   name="business"
+                   value="<?= PAYPAL_ID ?>">
+
+            <input type="hidden"
+                   name="cmd"
+                   value="_xclick">
+
+            <input type="hidden"
+                   name="item_name"
+                   value="Shopping Cart">
+
+            <input type="hidden"
+                   name="item_number"
+                   value="<?= $cart['id'] ?>">
+
+            <input type="hidden"
+                   name="amount"
+                   value="<?= $total ?>">
+
+            <input type="hidden"
+                   name="currency_code"
+                   value="<?= PAYPAL_CURRENCY ?>">
+
+            <input type="hidden"
+                   name="return"
+                   value="<?= PAYPAL_RETURN_URL ?>">
+
+            <input type="hidden"
+                   name="cancel_return"
+                   value="<?= PAYPAL_CANCEL_URL ?>">
+
+            <button type="submit"
+                    class="btn btn-success">
+                Pay with PayPal
             </button>
+
         </form>
 
     <?php endif; ?>
