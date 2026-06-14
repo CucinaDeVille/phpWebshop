@@ -40,6 +40,58 @@ $stmt = $pdo->prepare("
 ");
 $stmt->execute([$cartId]);
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (!$items) {
+    die("Cart empty");
+}
+
+// save order to db
+$total = 0;
+foreach ($items as $item) {
+    $total += $item['price'] * $item['quantity'];
+}
+
+$stmt = $pdo->prepare("
+    INSERT INTO orders (user_id, total, payment_method, paypal_transaction_id)
+    VALUES (?, ?, ?, ?)
+");
+
+$stmt->execute([
+        $_SESSION['user_id'],
+        $total,
+        'PayPal',
+        $transactionId
+]);
+
+$orderId = $pdo->lastInsertId();
+$order = [
+        'id' => $orderId,
+        'total' => $total
+];
+
+// save order items to db
+$stmt = $pdo->prepare("
+    INSERT INTO order_items (order_id, product_id, product_name, price, quantity)
+    VALUES (?, ?, ?, ?, ?)
+");
+
+foreach ($items as $item) {
+    $stmt->execute([
+            $orderId,
+            $item['product_id'],
+            $item['name'],
+            $item['price'],
+            $item['quantity']
+    ]);
+}
+
+// close cart
+$stmt = $pdo->prepare("
+    UPDATE carts
+    SET checked_out = 1
+    WHERE id = ?
+");
+$stmt->execute([$cartId]);
 ?>
 
 <!DOCTYPE html>
