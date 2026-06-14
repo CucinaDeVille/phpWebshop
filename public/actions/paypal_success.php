@@ -2,25 +2,43 @@
 session_start();
 require_once(__DIR__ . "/../../includes/db.php");
 
-$orderId = $_GET['order_id'] ?? null;
+if (!isset($_SESSION['user_id'])) {
+    die("Not logged in");
+}
 
-if (!$orderId) {
-    die("Invalid order");
+// PayPal sends cart id
+$cartId = isset($_GET['item_number']) ? (int)$_GET['item_number'] : null;
+
+// transaction id (PayPal uses tx)
+$transactionId = $_GET['tx'] ?? $_GET['txn_id'] ?? null;
+
+// safety check
+if (!$cartId || !$transactionId) {
+    die("Invalid PayPal request");
+}
+
+// load cart and items
+$stmt = $pdo->prepare("
+    SELECT * FROM carts WHERE id = ? AND user_id = ?
+");
+$stmt->execute([$cartId, $_SESSION['user_id']]);
+$cart = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$cart) {
+    die("Cart not found");
 }
 
 $stmt = $pdo->prepare("
-    SELECT * FROM orders WHERE id = ?
+    SELECT
+        ci.product_id,
+        ci.quantity,
+        p.name,
+        p.price
+    FROM cart_items ci
+    JOIN products p ON ci.product_id = p.id
+    WHERE ci.cart_id = ?
 ");
-$stmt->execute([$orderId]);
-$order = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$stmt = $pdo->prepare("
-    SELECT oi.*, p.image
-    FROM order_items oi
-    JOIN products p ON oi.product_id = p.id
-    WHERE oi.order_id = ?
-");
-$stmt->execute([$orderId]);
+$stmt->execute([$cartId]);
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -52,7 +70,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card mb-3">
                     <div class="card-body">
 
-                        <h6><?= htmlspecialchars($item['product_name']) ?></h6>
+                        <h6><?= htmlspecialchars($item['name']) ?></h6>
                         <p><?= $item['price'] ?> € × <?= $item['quantity'] ?></p>
 
                     </div>
