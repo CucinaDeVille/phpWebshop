@@ -22,7 +22,7 @@ INSERT INTO categories (name, parent_id) VALUES
                                             ('Indoor Lighting', 3), -- id13
                                             ('Smart Devices', 3), -- id14
                                             ('Automations', 3), -- id15
-                                            ('Outdoors', 3), -- id16
+                                            ('Outdoor & Router', 3), -- id16
 
 
 -- Sub-subcategories (Smart Devices)
@@ -55,7 +55,7 @@ INSERT INTO categories (name, parent_id) VALUES
 -- Sub-subcategories (Household appliances)
 -- Kitchen appliances
                                             ('Mixer', 10), -- id31
-                                            ('Air Fryer', 10), -- id32
+                                            ('Computer Mice', 10), -- id32
                                             ('Egg cooker', 10), -- id33
 -- Bathroom appliances
                                             ('Washing Machine', 11), -- id34
@@ -78,7 +78,7 @@ INSERT INTO categories (name, parent_id) VALUES
 
 -- Outdoors
                                             ('Outdoor Lighting', 16), -- id43
-                                            ('Gardening', 16); -- id44
+                                            ('Router', 16); -- id44
 
 INSERT INTO products (name, description, image, price, category_id) VALUES
 
@@ -120,29 +120,29 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 ('KitchenAid Mixer', 'Powerful kitchen mixer for baking', 'assets/images/mixer.jpeg', 199.00, 31),
 ('Bosch Hand Mixer', 'Compact hand mixer for daily use', 'assets/images/mixer2.jpeg', 59.00, 31),
 
--- Air Fryer
-('Philips Airfryer XL', 'Oil-free frying for healthy meals', 'assets/images/airfryer.jpeg', 149.00, 32),
-('Ninja Air Fryer Pro', 'High performance air fryer', 'assets/images/airfryer2.jpeg', 129.00, 32),
+-- Mice
+('Logitech MX Master 3S', 'Ergonomic Computer Mouse', 'assets/images/mouse.jpeg', 149.00, 32),
+('Apple Mighty Mouse', 'White Computer Mouse', 'assets/images/mouse2.jpeg', 129.00, 32),
 
 -- Egg cooker
-('Russell Hobbs Egg Cooker', 'Cook up to 7 eggs perfectly', 'assets/images/eggcooker.jpeg', 29.00, 33),
+('Krups Egg Cooker', 'Cook up to 3 eggs perfectly', 'assets/images/eggcooker.jpeg', 29.00, 33),
 ('Severin Egg Boiler', 'Simple egg cooking device', 'assets/images/eggcooker2.jpeg', 24.00, 33),
 
 -- Washing Machine
-('Bosch Series 6 Washing Machine', 'Energy efficient washing machine', 'assets/images/washingmachine.jpeg', 499.00, 34),
-('Samsung EcoBubble Washer', 'Powerful and smart washing machine', 'assets/images/washingmachine2.jpeg', 549.00, 34),
+('Miele Washing Machine', 'Energy efficient washing machine', 'assets/images/washingmachine.jpeg', 499.00, 34),
+('Bosch EcoBubble Washer', 'Powerful and smart washing machine', 'assets/images/washingmachine2.jpeg', 549.00, 34),
 
 -- Dryer
-('Bosch Heat Pump Dryer', 'Low energy drying technology', 'assets/images/dryer.jpeg', 599.00, 35),
+('Miele Heat Pump Dryer', 'Low energy drying technology', 'assets/images/dryer.jpeg', 599.00, 35),
 ('AEG Tumble Dryer', 'Fast and gentle drying', 'assets/images/dryer2.jpeg', 529.00, 35),
 
 -- Hair Dryer
-('Dyson Supersonic', 'Premium hair dryer with fast drying', 'assets/images/hairdryer.jpeg', 399.00, 36),
+('Braun Supersonic', 'Premium hair dryer with fast drying', 'assets/images/hairdryer.jpeg', 399.00, 36),
 ('Philips Hair Dryer', 'Classic household hair dryer', 'assets/images/hairdryer2.jpeg', 39.00, 36),
 
 -- Vacuum Cleaner
-('Dyson V15 Detect', 'Powerful cordless vacuum cleaner', 'assets/images/vacuum.jpeg', 599.00, 37),
-('Bosch Vacuum Cleaner Pro', 'Reliable home vacuum cleaner', 'assets/images/vacuum2.jpeg', 199.00, 37),
+('Miele Tango', 'Powerful vacuum cleaner', 'assets/images/vacuum.jpeg', 599.00, 37),
+('Dyson Vacuum Cleaner', 'Cordless home vacuum cleaner', 'assets/images/vacuum2.jpeg', 199.00, 37),
 
 -- Bulb
 ('Philips Hue White Bulb', 'Smart controllable LED bulb', 'assets/images/bulb.jpeg', 19.00, 38),
@@ -153,8 +153,8 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 ('Govee LED Strip', 'Color changing LED strip', 'assets/images/lightstrip2.jpeg', 49.00, 39),
 
 -- Speakers
-('Sonos One Speaker', 'Smart high quality speaker', 'assets/images/speaker.jpeg', 199.00, 40),
-('Amazon Echo Studio', 'Smart Alexa speaker', 'assets/images/speaker2.jpeg', 159.00, 40),
+('Apple Homepod', 'Smart speaker', 'assets/images/speaker.jpeg', 199.00, 40),
+('Apple iPod HiFi', 'Powerful home speaker', 'assets/images/speaker2.jpeg', 159.00, 40),
 
 -- Controllers
 ('Philips Hue Bridge', 'Smart home controller hub', 'assets/images/controller.jpeg', 59.00, 41),
@@ -165,9 +165,9 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 ('Mi Smart NFC Tags', 'Programmable automation stickers', 'assets/images/rfid2.jpeg', 12.00, 42),
 
 -- Lighting
-('Philips Outdoor Light', 'Smart outdoor lighting system', 'assets/images/outdoorlight.jpeg', 89.00, 43),
-('Ring Floodlight', 'Outdoor security light with camera', 'assets/images/outdoorlight2.jpeg', 179.00, 43),
+('Philips Outdoor Light', 'Smart outdoor lighting system', 'assets/images/bulb.jpeg', 89.00, 43),
+('Ring Floodlight', 'Outdoor security light with camera', 'assets/images/bulb2.jpeg', 179.00, 43),
 
--- Gardening
-('Smart Garden System', 'Automatic watering system', 'assets/images/garden.jpeg', 129.00, 44),
-('Gardena Smart Sensor', 'Soil moisture monitoring system', 'assets/images/garden2.jpeg', 69.00, 44);
+-- Router
+('Fritzbox 7590', 'Home Router', 'assets/images/router.jpeg', 229.00, 44),
+('Fritzbox 5690 Pro', 'Pro Home Router', 'assets/images/router2.jpeg', 329.00, 44);
