@@ -1,14 +1,11 @@
 ## public
-publicly reachable pages; e.g. apace webroot
+Pages, pictures and actions that make up the website.
 
 ## includes
-reusable php files
-
-## actions
-files that digest forms
+Reused php files like the connection to the database.
 
 ## sql
-tables and test data
+Files creating the structure of the database and filling test data into it.
 To test if data has been successfully loaded into the db, execute following command to connect to the db container interactively:
 
 ```bash
@@ -32,7 +29,7 @@ The user is defined in `sql/seed.sql` and the password is stored as a hash.
 A helper script `hash.php` can be used to generate password hashes.
 
 ## docker
-Change into the `phpWebshop` directory and run:
+If you have cloned this repository, change into the `phpWebshop` directory and run:
 
 ```bash
 docker compose up
@@ -40,3 +37,6 @@ docker compose up
 
 to start the application.
 The `docker-compose.yaml` file includes the MySQL database and the Apache PHP Server.
+
+## docs
+This folder contains an ER diagram highlighting the structure of the tables within the database.
