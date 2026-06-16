@@ -6,4 +6,3 @@ RUN a2enmod rewrite
 
 COPY public/ /var/www/html/
 COPY includes/ /var/www/includes/
-COPY actions/ /var/www/actions/
