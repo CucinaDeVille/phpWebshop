@@ -85,21 +85,21 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 -- iPhones
 ('Apple iPhone XR', 'Apple iPhone from 2018', 'assets/images/iphonexr.jpeg', 699.00, 20),
 ('Apple iPhone SE', 'Apple iPhone from 2016', 'assets/images/iphonese.jpeg', 589.00, 20),
-('Apple iPhone 5c', 'Apple iPhone from 2013', 'assets/images/iphone5c.heic', 599.00, 20),
+('Apple iPhone 5c', 'Apple iPhone from 2013', 'assets/images/iphone5c.jpeg', 599.00, 20),
 
 -- iPads
-('Apple iPad mini', 'Small Apple iPad', 'assets/images/ipadmini.heic', 599.00, 21),
-('Apple iPad Pro 11"', 'Pro Apple iPad', 'assets/images/ipadpro.heic', 799.00, 21),
+('Apple iPad mini', 'Small Apple iPad', 'assets/images/ipadmini.jpeg', 599.00, 21),
+('Apple iPad Pro 11"', 'Pro Apple iPad', 'assets/images/ipadpro.jpeg', 799.00, 21),
 
 -- MacBook
-('MacBook Air M1', 'First Mac with Apple Silicon', 'assets/images/mba13.heic', 999.00, 17),
-('MacBook Pro 16"', 'Powerful Apple Mac for professionals', 'assets/images/mbp16.heic', 2499.00, 17),
+('MacBook Air M1', 'First Mac with Apple Silicon', 'assets/images/mba13.jpeg', 999.00, 17),
+('MacBook Pro 16"', 'Powerful Apple Mac for professionals', 'assets/images/mbp16.jpeg', 2499.00, 17),
 
 -- iMac
 ('iMac 24"', 'All-in-one Apple desktop computer', 'assets/images/lg5k.jpeg', 1199.00, 18),
 
 -- Mac Mini
-('Mac Mini M4', 'Compact Apple desktop computer', 'assets/images/macmini.heic', 799.00, 19),
+('Mac Mini M4', 'Compact Apple desktop computer', 'assets/images/macmini.jpeg', 799.00, 19),
 
 -- Monitors
 ('LG UltraFine 4K', 'High quality 4K monitor for Mac', 'assets/images/lg4k.jpeg', 699.00, 22),
@@ -108,13 +108,13 @@ INSERT INTO products (name, description, image, price, category_id) VALUES
 ('Apple Studio Display', '5K Retina display', 'assets/images/lg5k.jpeg', 1599.00, 25),
 
 -- TVs
-('Samsung 4K Smart TV', 'Ultra HD smart television', 'assets/images/lgoled.heic', 499.00, 26),
-('LG OLED C3 55"', 'OLED TV with perfect blacks', 'assets/images/lgoled.heic', 899.00, 27),
+('Samsung 4K Smart TV', 'Ultra HD smart television', 'assets/images/lgoled.jpeg', 499.00, 26),
+('LG OLED C3 55"', 'OLED TV with perfect blacks', 'assets/images/lgoled.jpeg', 899.00, 27),
 
 -- Accessories
-('Apple AirPods Pro', 'Noise cancelling AirPods', 'assets/images/airpodspro.heic', 279.00, 28),
-('Apple Watch Series', 'Apple Watch with health tracking', 'assets/images/applewatch.heic', 499.00, 29),
-('Apple iPhone 5c Dock', 'Charge iPhone and play music in an upright position', 'assets/images/iphone5cdock.heic', 39.00, 30),
+('Apple AirPods Pro', 'Noise cancelling AirPods', 'assets/images/airpodspro.jpeg', 279.00, 28),
+('Apple Watch Series', 'Apple Watch with health tracking', 'assets/images/applewatch.jpeg', 499.00, 29),
+('Apple iPhone 5c Dock', 'Charge iPhone and play music in an upright position', 'assets/images/iphone5cdock.jpeg', 39.00, 30),
 
 -- Mixer
 ('KitchenAid Mixer', 'Powerful kitchen mixer for baking', 'assets/images/mixer.jpeg', 199.00, 31),
